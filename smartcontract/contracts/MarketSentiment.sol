@@ -23,7 +23,7 @@ contract MarketSentiment {
         uint256 up,
         uint256 down,
         address voter,
-        string ticker,
+        string ticker
     );
 
     mapping(string => ticker) private Tickers;
@@ -54,7 +54,7 @@ contract MarketSentiment {
     ) {
         require(Tickers[_ticker].exists, "No such Ticker defined");
 
-        ticker storage t = Ticker[_ticker];
+        ticker storage t = Tickers[_ticker];
         
         return (t.up, t.down);
     }
